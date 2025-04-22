@@ -1,26 +1,77 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Employee Portal</h1>
+    <AddEmployee />
+    <FindEmployee />
+    <DeleteEmployee />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AddEmployee from './components/AddEmployee.vue';
+import FindEmployee from './components/FindEmployee.vue';
+import DeleteEmployee from './components/DeleteEmployee.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: {    
+    AddEmployee,
+    FindEmployee,
+    DeleteEmployee
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped>
+h1, h2 {
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+form, .section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+}
+
+input {
+  margin: 5px;
+  padding: 8px;
+  width: 90%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 8px 16px;
+  margin-top: 5px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1a242f;
+}
+
+@media (min-width: 768px) {
+  form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  input {
+    margin: 5px 10px;
+    width: 200px;
+  }
+
+  button {
+    height: 40px;
+    align-self: center;
+  }
 }
 </style>
