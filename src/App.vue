@@ -5,6 +5,7 @@
     <FindEmployee />
     <DeleteEmployee />
   </div>
+  <router-view />
 </template>
 
 <script>

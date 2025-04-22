@@ -1,3 +1,12 @@
+mounted() {
+  const authHeader = localStorage.getItem('authHeader');
+  if (!authHeader) {
+    alert("Please login first");
+    this.$router.push('/');
+  }
+}
+
+
 <template>
   <div>
     <h2>Add Employee</h2>

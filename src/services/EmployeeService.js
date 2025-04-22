@@ -9,9 +9,15 @@ const api = axios.create({
 
 export default {
   addEmployee(employee) {
-    return api.post('/add', employee);
+    const authHeader = localStorage.getItem('authHeader');
+
+    return axios.post('/add', employee, {
+      headers: {
+        Authorization: authHeader
+      }
+    });
   },
-  getEmployeeById(id) {
+  getEmployeeById(id) {  
     return api.get(`/get/${id}`);
   },
   deleteEmployeeById(id) {
